@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Misi 1: Bisnis Kuliner</title>
+<style>
+:root{--bg1:#fde9c4;--bg2:#f7c98b;--ink:#17325f;--cream:#fffaf0;--blue:#2457b8;--blue2:#173f8f;--gold:#f2b632;--orange:#ee7b22;--wood:#b9824a;--ok:#2e9b4f;--bad:#d44a3a;--shadow:rgba(60,35,10,.25);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a2013;--bg2:#4a331c;--ink:#f3ead6;--cream:#2f2a22;--blue:#2d63cc;--blue2:#1b3d8a;--wood:#8a5e34}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;color:var(--ink);background:linear-gradient(var(--bg1),var(--bg2));min-height:100vh}
+.wrap{max-width:520px;margin:0 auto;padding:14px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.badge{background:var(--orange);color:#fff;border:3px solid var(--gold);border-radius:14px;padding:6px 14px;font-weight:800;line-height:1.1;box-shadow:0 3px 0 var(--shadow)}
+.badge small{display:block;font-weight:600;font-size:.7rem}
+.sign{background:var(--wood);color:#fff;border-radius:10px;padding:8px 14px;font-weight:800;border-bottom:5px solid repeating-linear-gradient(90deg,#fff,#f90);}
+.hero{display:flex;gap:10px;align-items:flex-start;margin-top:14px}
+.boy{font-size:3.6rem;line-height:1}
+.bubble{background:var(--cream);border:3px solid var(--blue);border-radius:18px;padding:10px 14px;font-weight:700;font-size:.95rem}
+.bubble b{color:var(--orange)}
+.how{background:var(--cream);border:3px solid var(--gold);border-radius:16px;padding:10px 14px;margin-top:12px;font-size:.9rem}
+.how h3{margin:0 0 6px;background:var(--blue);color:#fff;display:inline-block;padding:3px 12px;border-radius:8px;font-size:.9rem}
+.how ol{margin:6px 0 0;padding-left:20px}
+.board{background:var(--wood);border-radius:16px;padding:16px 8px;margin-top:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;box-shadow:0 5px 0 var(--shadow)}
+.card{aspect-ratio:2/3;border:3px solid var(--gold);border-radius:10px;background:var(--blue);color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:inherit;padding:0;transition:transform .15s}
+.card:hover:not(:disabled){transform:translateY(-6px)}
+.card .n{width:2rem;height:2rem;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-weight:800}
+.card .ic{font-size:1.2rem}
+.card.done{background:var(--ok)}
+.card:disabled:not(.done){opacity:.4;cursor:not-allowed}
+.prog{background:var(--cream);border:3px solid var(--blue);border-radius:16px;padding:12px 14px;margin-top:14px;display:flex;gap:12px;align-items:center}
+.lock{font-size:2rem}
+.prog p{margin:0;font-size:.9rem}
+.stars{font-size:1.4rem;letter-spacing:3px}
+.btn{background:var(--orange);color:#fff;border:0;border-radius:12px;padding:10px 18px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 3px 0 var(--shadow)}
+.btn:disabled{opacity:.5}
+.modal{position:fixed;inset:0;background:rgba(10,20,40,.6);display:none;align-items:flex-end;justify-content:center;z-index:5}
+.modal.on{display:flex}
+.sheet{background:var(--cream);width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;border:4px solid var(--gold);padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.sheet h2{margin:0 0 8px;color:var(--blue);font-size:1.1rem}
+.txt{background:rgba(242,182,50,.18);border-left:5px solid var(--orange);border-radius:8px;padding:8px 12px;font-size:.88rem;margin-bottom:10px}
+.txt ol,.txt ul{margin:4px 0;padding-left:20px}
+.q{font-weight:800;margin:6px 0}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border-radius:12px;border:2px solid var(--blue);background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){background:rgba(36,87,184,.12)}
+.opt.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad);border-color:var(--bad);color:#fff}
+.fb{margin-top:8px;padding:10px 12px;border-radius:12px;font-size:.9rem;display:none}
+.fb.ok{display:block;background:rgba(46,155,79,.18)}
+.fb.no{display:block;background:rgba(212,74,58,.18)}
+.row{display:flex;gap:8px;margin-top:10px}
+.x{float:right;background:none;border:0;font-size:1.3rem;color:var(--ink);cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="badge"><small>Misi 1</small>Bisnis Kuliner</div>
+    <div class="sign">🥖 Bisnis Kuliner</div>
+  </div>
+  <div class="hero">
+    <div class="boy">🧒</div>
+    <div class="bubble">👨‍🍳 Selamat datang di <b>Bisnis Kuliner!</b> Pemilik toko roti membutuhkan bantuanmu untuk menyelesaikan tantangan tentang teks prosedur kompleks.</div>
+  </div>
+  <div class="how">
+    <h3>Cara Bermain:</h3>
+    <ol>
+      <li>Pilih 3 dari 5 kartu yang tersedia.</li>
+      <li>Buka kartu dan jawablah pertanyaannya.</li>
+      <li>Jawab dengan benar untuk melanjutkan ke stand misi berikutnya!</li>
+    </ol>
+  </div>
+  <div class="board" id="board"></div>
+  <div class="prog">
+    <div class="lock" id="lock">🔒</div>
+    <div>
+      <div class="stars" id="stars">☆☆☆</div>
+      <p id="msg">Selesaikan 3 kartu dengan benar, maka kamu bisa lanjut ke <b>Misi 2</b>!</p>
+    </div>
+  </div>
+  <div class="row"><button class="btn" id="next" disabled>Lanjut ke Misi 2 ➜</button></div>
+</div>
+
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+
+<script>
+var Q=[
+{t:"SOP Produksi Roti Industri",txt:"(1) Prosedur ini bertujuan menjaga mutu roti agar seragam pada setiap produksi.<br>(2) Siapkan 25 kg tepung, 150 g ragi, dan mixer spiral berkapasitas 30 kg.<br>(3) Uleni selama 12 menit hingga adonan kalis dan elastis.<br>(4) Dengan demikian, setiap loyang menghasilkan roti yang konsisten.",q:"Bagian (1) dan (4) secara berurutan merupakan struktur teks prosedur berupa…",o:["bahan dan langkah-langkah","langkah-langkah dan tujuan","tujuan dan penutup (hasil akhir)","penutup dan tujuan"],a:2,e:"Kalimat (1) memaparkan maksud prosedur (tujuan), sedangkan kalimat (4) menyimpulkan hasil akhir bila langkah dilakukan dengan benar (penutup)."},
+{t:"Mengelola Dua Tahap Sekaligus",txt:"Setelah adonan mengembang dua kali lipat, kempiskan dengan telapak tangan. <i>Sementara itu</i>, panaskan oven pada suhu 180°C. <i>Jika</i> adonan terlalu lengket, tambahkan tepung secukupnya.",q:"Frasa “sementara itu” pada teks di atas menyatakan hubungan…",o:["syarat: langkah berikutnya dilakukan hanya jika kondisi terpenuhi","waktu: dua kegiatan dilakukan pada saat yang bersamaan","pertentangan: langkah kedua berlawanan dengan langkah pertama","sebab-akibat: oven dipanaskan karena adonan mengembang"],a:1,e:"“Sementara itu” adalah konjungsi temporal simultan: dua kegiatan berjalan bersamaan. “Jika” menyatakan syarat, bukan waktu."},
+{t:"Panduan Pelatihan Karyawan",txt:"Seorang karyawan baru menulis langkah kerja untuk panduan pelatihan. Panduan harus memakai kalimat perintah yang baku dan efektif.",q:"Kalimat langkah yang paling tepat adalah…",o:["Kamu aduk aja tepung dan gula sampai rata.","Mengaduk tepung dan gula yang sudah rata.","Tepung dan gula diaduk-aduk oleh kamu sampai rata.","Aduklah tepung dan gula hingga tercampur rata."],a:3,e:"Kalimat perintah diawali verba dasar (aduk/aduklah) dan memakai ragam baku. Pilihan lain tidak baku, tidak berpredikat perintah, atau bertele-tele."},
+{t:"Membandingkan Dua Teks",txt:"<b>Teks A:</b> Campur, uleni, panggang.<br><b>Teks B:</b> Jika memakai ragi instan, campurkan langsung ke tepung. Jika memakai ragi basah, larutkan dahulu dalam susu hangat selama 10 menit. Pastikan suhu susu tidak melebihi 40°C agar ragi tidak mati.",q:"Teks B lebih tepat disebut prosedur kompleks karena…",o:["memuat langkah bersyarat, keterangan rinci, dan peringatan untuk mencegah kegagalan","hanya memakai kalimat yang lebih pendek daripada Teks A","menyampaikan pendapat penulis tentang jenis ragi terbaik","menceritakan pengalaman penulis saat membuat roti"],a:0,e:"Prosedur kompleks memuat percabangan (jika… maka…), keterangan rinci (waktu, suhu), dan peringatan. Teks A hanya urutan sederhana."},
+{t:"Menyusun Urutan SOP",txt:"Pemilik toko menyusun SOP untuk karyawan baru. Kegiatannya: <ol type='A'><li>Panggang selama 25 menit</li><li>Uleni adonan hingga kalis</li><li>Campurkan bahan kering</li><li>Bentuk adonan dan tata di loyang</li><li>Fermentasi adonan selama 60 menit</li><li>Setelah dingin, kemas roti</li></ol>",q:"Urutan langkah yang runtut dan logis adalah…",o:["C – E – B – D – A – F","B – C – E – D – F – A","C – B – D – E – A – F","C – B – E – D – A – F"],a:3,e:"Urutan logis: campur (C), uleni (B), fermentasi (E), bentuk (D), panggang (A), lalu kemas setelah dingin (F). Kunci kata “setelah dingin” menandai F paling akhir."}
+];
+var done={},solved=0,cur=null,tries=0;
+var board=document.getElementById("board");
+Q.forEach(function(_,i){var b=document.createElement("button");b.className="card";b.id="c"+i;b.innerHTML='<span class="n">'+(i+1)+'</span><span class="ic">👨‍🍳</span><span>★</span>';b.onclick=function(){openQ(i)};board.appendChild(b)});
+function openQ(i){
+  cur=i;tries=0;var d=Q[i],L=["A","B","C","D"];
+  var h='<button class="x" onclick="closeM()" aria-label="Tutup">✕</button><h2>Kartu '+(i+1)+': '+d.t+'</h2><div class="txt">'+d.txt+'</div><div class="q">'+d.q+'</div>';
+  d.o.forEach(function(o,k){h+='<button class="opt" data-k="'+k+'" onclick="ans('+k+')">'+L[k]+'. '+o+'</button>'});
+  h+='<div class="fb" id="fb"></div>';
+  document.getElementById("sheet").innerHTML=h;
+  document.getElementById("modal").classList.add("on");
+}
+function ans(k){
+  var d=Q[cur],fb=document.getElementById("fb"),opts=document.querySelectorAll(".opt");
+  if(k===d.a){
+    opts.forEach(function(o){o.disabled=true});opts[k].classList.add("right");
+    fb.className="fb ok";fb.innerHTML="✅ <b>Benar!</b> "+d.e+'<div class="row"><button class="btn" onclick="finish()">Lanjut</button></div>';
+  }else{
+    tries++;opts[k].classList.add("wrong");opts[k].disabled=true;
+    fb.className="fb no";fb.innerHTML="❌ <b>Belum tepat.</b> "+(tries>=2?"Petunjuk: "+d.e.split(".")[0]+".":"Baca teksnya lagi, lalu coba pilihan lain!");
+  }
+}
+function finish(){
+  done[cur]=true;solved++;closeM();
+  var c=document.getElementById("c"+cur);c.classList.add("done");c.disabled=true;c.querySelector(".ic").textContent="✅";
+  document.getElementById("stars").textContent="★".repeat(solved)+"☆".repeat(3-solved);
+  if(solved>=3){
+    Q.forEach(function(_,i){document.getElementById("c"+i).disabled=true});
+    document.getElementById("lock").textContent="🔓";
+    document.getElementById("msg").innerHTML="🎉 <b>Hebat!</b> Kamu siap lanjut ke <b>Misi 2</b>!";
+    document.getElementById("next").disabled=false;
+  }
+}
+function closeM(){document.getElementById("modal").classList.remove("on")}
+document.getElementById("next").onclick=function(){alert("Menuju Misi 2…")};
+</script>
+</body>
+</html>
